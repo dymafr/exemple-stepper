@@ -1,0 +1,35 @@
+<mat-horizontal-stepper linear #stepper>
+	<mat-step [stepControl]="premierFormulaire">
+		<form [formGroup]="premierFormulaire">
+			<ng-template matStepLabel>Remplissez vos nom et prénom :</ng-template>
+			<mat-form-field>
+				<input matInput placeholder="Prénom" formControlName="prenom" required>
+      </mat-form-field>
+				<mat-form-field>
+					<input matInput placeholder="Nom" formControlName="nom" required>
+      </mat-form-field>
+					<div>
+						<button mat-button matStepperNext>Suivant</button>
+					</div>
+		</form>
+	</mat-step>
+	<mat-step [stepControl]="secondFormulaire" editable="false">
+		<form [formGroup]="secondFormulaire">
+			<ng-template matStepLabel>Remplissez votre email</ng-template>
+			<mat-form-field>
+				<input matInput placeholder="Email" formControlName="email" required>
+      </mat-form-field>
+				<div>
+					<button mat-button matStepperPrevious>Précédent</button>
+					<button mat-button matStepperNext>Suivant</button>
+				</div>
+		</form>
+	</mat-step>
+	<mat-step>
+		<ng-template matStepLabel>Terminé</ng-template>
+		Vous avez terminé le formulaire ! Merci
+		<div>
+			<button mat-button (click)="stepper.reset()">Reset</button>
+		</div>
+	</mat-step>
+</mat-horizontal-stepper>
