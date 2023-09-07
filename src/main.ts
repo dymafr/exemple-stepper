@@ -35,6 +35,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { CdkTableModule } from '@angular/cdk/table';
 import { ExempleComponent } from './app/exemple';
+import 'zone.js';
 
 @NgModule({
   exports: [
